@@ -345,7 +345,7 @@ const MusicPlayer = ({ shouldPlay }) => {
       preload="auto"
       style={{ display: 'none' }}
     >
-      <source src="https://jumpshare.com/s/RDvbWTcTRW5kr292FXOm" type="audio/mpeg" />
+      <source src="https://files.catbox.moe/uneqqu.mp3" type="audio/mpeg" />
     </audio>
   );
 };
