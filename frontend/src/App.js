@@ -329,17 +329,24 @@ const FinalCard = () => {
 };
 
 const MusicPlayer = ({ shouldPlay }) => {
+  const audioRef = useRef(null);
+  
+  useEffect(() => {
+    if (audioRef.current && shouldPlay) {
+      audioRef.current.volume = 0.4;
+      audioRef.current.play().catch(err => console.log('Audio autoplay prevented:', err));
+    }
+  }, [shouldPlay]);
+  
   return (
-    <iframe
-      src={`https://open.spotify.com/embed/track/5XeFesFbtLpXzIVDNQP22n?utm_source=generator&autoplay=${shouldPlay ? 1 : 0}`}
-      width="0"
-      height="0"
-      frameBorder="0"
-      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-      loading="lazy"
+    <audio
+      ref={audioRef}
+      loop
+      preload="auto"
       style={{ display: 'none' }}
-      title="Background Music"
-    />
+    >
+      <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
+    </audio>
   );
 };
 
