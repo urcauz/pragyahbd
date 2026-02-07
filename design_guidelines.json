@@ -1,0 +1,139 @@
+{
+  "project_name": "pragya_birthday_site",
+  "theme_strategy": {
+    "mode": "light",
+    "background_type": "animated_gradient_mesh",
+    "primary_color": "#FFB7C5",
+    "secondary_color": "#E6E6FA",
+    "accent_color": "#FF69B4",
+    "text_contrast": "dark_charcoal"
+  },
+  "typography": {
+    "headings": {
+      "font_family": "Playfair Display, serif",
+      "weight": "700",
+      "style": "italic",
+      "usage": "Hero titles, card headers, emotional keywords"
+    },
+    "body": {
+      "font_family": "Quicksand, Nunito, sans-serif",
+      "weight": "500",
+      "usage": "Paragraphs, poetic texts, buttons"
+    }
+  },
+  "colors": {
+    "palette": {
+      "sakura_pink": "#FFB7C5",
+      "lavender_mist": "#E6E6FA",
+      "peach_fuzz": "#FFDAB9",
+      "sky_dream": "#B0E0E6",
+      "white_glass": "rgba(255, 255, 255, 0.65)",
+      "deep_emotion": "#4A4A4A"
+    },
+    "gradients": {
+      "background_mesh": "linear-gradient(120deg, #ff9a9e 0%, #fecfef 99%, #a18cd1 100%)",
+      "card_surface": "linear-gradient(135deg, rgba(255,255,255,0.8), rgba(255,255,255,0.4))"
+    }
+  },
+  "layout_structure": {
+    "type": "single_card_focus",
+    "container": "relative w-full h-screen overflow-hidden flex items-center justify-center",
+    "card_style": "glassmorphism",
+    "card_dimensions": "w-[90vw] max-w-md md:max-w-2xl min-h-[60vh] md:min-h-[500px]",
+    "z_index_layers": {
+      "background_blobs": 0,
+      "floating_particles": 10,
+      "main_card": 20,
+      "overlays": 30
+    }
+  },
+  "components": {
+    "MusicPlayer": {
+      "type": "hidden_spotify_embed",
+      "track_id": "4HvW2qNlB2H9s5s3u5w7",
+      "behavior": "Auto-play after first interaction (click/tap anywhere)"
+    },
+    "Background": {
+      "features": [
+        "Moving gradients (CSS keyframes)",
+        "Large floating blobs (Framer Motion, blur-3xl, opacity-40)",
+        "Drifting hearts (Framer Motion, upward float)",
+        "Sparkles (Random opacity twinkle)"
+      ]
+    },
+    "Navigation": {
+      "style": "stepper_dots",
+      "position": "bottom-center of card",
+      "transition": "AnimatePresence mode='wait'"
+    },
+    "Gallery": {
+      "grid": "grid-cols-2 gap-4",
+      "image_style": "rounded-xl shadow-lg hover:scale-105 transition-transform duration-500"
+    }
+  },
+  "motion_guidelines": {
+    "library": "framer-motion",
+    "principles": {
+      "continuous": "Background elements must never stop moving",
+      "dreamy": "Use easeInOut, slow durations (10s+) for background, snappy (0.5s) for UI",
+      "entrance": "Stagger children for text appearing",
+      "exit": "Fade out with blur"
+    },
+    "specifics": {
+      "blobs": "animate={{ x: [0, 100, -100, 0], y: [0, -100, 100, 0] }} transition={{ repeat: Infinity, duration: 20 }}",
+      "hearts": "animate={{ y: -1000, opacity: [0, 1, 0] }}",
+      "card_transition": "initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 1.1 }}"
+    }
+  },
+  "content_assets": {
+    "images": [
+      {
+        "url": "https://images.unsplash.com/photo-1707940940830-97b3eaf2e32e?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "alt": "Dreamy trees and clouds",
+        "category": "gallery_1"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1731682603770-f2115dbf4b29?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "alt": "Purple flower field",
+        "category": "gallery_2"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1555381253-80a9580c32a5?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "alt": "Pink petals",
+        "category": "gallery_3"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1767324719420-3a698b25903b?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "alt": "Pink canopy",
+        "category": "gallery_4"
+      }
+    ],
+    "texts": {
+      "intro": {
+        "title": "For You, Pragya",
+        "subtitle": "A little corner of the internet, just for you."
+      },
+      "message": {
+        "body": "On your special day, I wanted to remind you how much light you bring into this world. Like these drifting stars, you shine effortlessly."
+      },
+      "final": {
+        "heading": "Happy Birthday!",
+        "sub": "Here's to another year of magic."
+      }
+    }
+  },
+  "instructions_to_main_agent": [
+    "INSTALL_DEPENDENCY: yarn add framer-motion",
+    "CRITICAL: Do not use static backgrounds. The background must consist of 3 layers: 1) CSS Gradient Mesh, 2) Framer Motion Blobs, 3) Particle Overlay (Hearts/Sparkles).",
+    "COMPONENT_STRUCTURE: Create a main 'CardManager' component that handles the state of which card (Intro, Message, Gallery, Final) is currently shown.",
+    "MUSIC_STRATEGY: Use a hidden iframe for Spotify. Add a global click listener to 'unmute' or start playing if blocked by browser policy.",
+    "MAXIMALISM: Do not be afraid of overlapping elements. The blobs should bleed behind the glass card. The hearts should float IN FRONT of the background but BEHIND the text if possible, or just everywhere.",
+    "TESTING: Add data-testid to the 'Next' buttons and the main container."
+  ],
+  "universal_guidelines": [
+    "Don't make generic centered layouts, simplistic gradients, and uniform styling.",
+    "Create depth through layered design elements with z-index hierarchy",
+    "Use glass-morphism effects with backdrop filters (12-24px blur)",
+    "Every interaction needs micro-animations - hover states, transitions, parallax effects, and entrance animations. Static = dead."
+  ]
+}
