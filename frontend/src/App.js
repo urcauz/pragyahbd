@@ -195,10 +195,10 @@ const MessageCard = ({ onNext }) => {
 
 const GalleryCard = ({ onNext }) => {
   const images = [
-    { url: 'https://images.unsplash.com/photo-1707940940830-97b3eaf2e32e?crop=entropy&cs=srgb&fm=jpg&q=85', alt: 'Dreamy trees and clouds' },
-    { url: 'https://images.unsplash.com/photo-1731682603770-f2115dbf4b29?crop=entropy&cs=srgb&fm=jpg&q=85', alt: 'Purple flower field' },
-    { url: 'https://images.unsplash.com/photo-1555381253-80a9580c32a5?crop=entropy&cs=srgb&fm=jpg&q=85', alt: 'Pink petals' },
-    { url: 'https://images.unsplash.com/photo-1767324719420-3a698b25903b?crop=entropy&cs=srgb&fm=jpg&q=85', alt: 'Pink canopy' }
+    { url: 'https://i.ibb.co/Kz5KWydp/image.png', alt: 'Dreamy trees and clouds' },
+    { url: 'https://i.ibb.co/nsxkVStW/image.png', alt: 'Purple flower field' },
+    { url: 'https://i.ibb.co/zHV7LDTR/image.png', alt: 'Pink petals' },
+    { url: 'https://i.ibb.co/DPjh4Wdr/image.png', alt: 'Pink canopy' }
   ];
   
   return (
@@ -345,7 +345,7 @@ const MusicPlayer = ({ shouldPlay }) => {
       preload="auto"
       style={{ display: 'none' }}
     >
-      <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
+      <source src="https://jumpshare.com/s/RDvbWTcTRW5kr292FXOm" type="audio/mpeg" />
     </audio>
   );
 };
